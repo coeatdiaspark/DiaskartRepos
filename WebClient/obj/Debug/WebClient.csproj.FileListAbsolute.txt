@@ -4,9 +4,3 @@ D:\Learnings\Practices\WebClient\WebClient\bin\WebClient.pdb
 D:\Learnings\Practices\WebClient\WebClient\obj\Debug\WebClient.dll
 D:\Learnings\Practices\WebClient\WebClient\obj\Debug\WebClient.pdb
 D:\Learnings\Practices\WebClient\WebClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
-D:\Projects\Diaskart\WebClient\bin\WebClient.dll.config
-D:\Projects\Diaskart\WebClient\bin\WebClient.dll
-D:\Projects\Diaskart\WebClient\bin\WebClient.pdb
-D:\Projects\Diaskart\WebClient\obj\Debug\WebClient.csprojResolveAssemblyReference.cache
-D:\Projects\Diaskart\WebClient\obj\Debug\WebClient.dll
-D:\Projects\Diaskart\WebClient\obj\Debug\WebClient.pdb
