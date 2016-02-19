@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html ng-app="mynodemodule" class="ng-scope">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        @charset "UTF-8";
+
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
+
+        ng\:form {
+            display: block;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Master </title>   
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/Site.css" rel="stylesheet" />    
+    <script src="../Scripts/angular.min.js"></script>    
+    <script src="../Controller/module.js"></script>
+    <script src="../Controller/service.js"></script>
+    <script src="../Controller/Controller.js"></script>
+</head>
+<body ng-app="mynodemodule" ng-controller="mycontroller" class="ng-scope">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://localhost:62766/Home">Application name</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+
+
+        <h2>Contact Master </h2>                         
+        
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td>
+                        First Name
+                    </td>
+                    <td>
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="Contact.FirstName">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Last Name
+                    </td>
+                    <td>
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="Contact.LastName">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Address
+                    </td>
+                    <td>
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="Contact.Address">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        City
+                    </td>
+                    <td>
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="Contact.City">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        State
+                    </td>
+                    <td>
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="Contact.State">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Pincode
+                    </td>
+                    <td>
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="Contact.Pincode">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email
+                    </td>
+                    <td>
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="Contact.Email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="New" class="btn btn-primary" ng-click="clear()">
+                    </td>
+                    <td>
+                        <input type="button" value="Save" class="btn btn-success" ng-click="save()">
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr> <td> ID </td>
+                     <td> FullName </td>                    
+                    <td>  Address   </td>
+                    <td>  City      </td>
+                    <td>  State     </td>
+                    <td>  Pincode     </td>
+                    <td>  Email     </td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody ng-repeat="cnt in ContactList">
+                <tr>
+                    <td>{{cnt._id}}</td>
+                    <td>{{cnt.FullName}}</td>                    
+                    <td>{{cnt.Address}}</td>
+                    <td>{{cnt.City}}</td>
+                    <td>{{cnt.State}}</td>
+                    <td>{{cnt.Pincode}}</td>
+                    <td>{{cnt.Email}}</td>
+                    <td> <input type="button" value="Delete" class="btn btn-success" ng-click="delete(cnt)" /> </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <hr>
+        <footer></footer>
+    </div>
+    
+   
+</body>
+</html>
