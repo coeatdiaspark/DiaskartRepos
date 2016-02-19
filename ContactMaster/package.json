@@ -1,0 +1,17 @@
+{
+  "name": "ContactMaster",
+  "version": "0.0.0",
+  "description": "ContactMaster",
+  "main": "app.js",
+  "author": {
+    "name": "Dhirendra.Tiwari",
+    "email": ""
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "bson": "^0.4.21",
+    "express": "^4.13.4",
+    "mongodb": "^2.1.7",
+    "mongoose": "^4.4.3"
+  }
+}
