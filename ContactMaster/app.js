@@ -14,7 +14,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-var operations = require('./DAL/ContactDominProcess.js');
+var operations = require('./BLL/ContactDominProcess.js');
 
 var communicationPort = 8080;
 

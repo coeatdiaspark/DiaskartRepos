@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="appAdmin">
+  <head>
+      <title></title>
+      <script src="../../Scripts/angular.js"></script>
+      <link href="../../Content/bootstrap.css" rel="stylesheet" />
+      <script src="../../Scripts/ui-bootstrap-tpls-1.2.1.js"></script>
+      <script src="../../Controllers/Admin/Sidebar.js"></script>
+      <script src="../../Controllers/Admin/Products.js"></script>
+      <script src="../../Controllers/Admin/SmartTable.js"></script>
+  </head>
+
+<body ng-controller="mainCtrl">
+   
+    <table st-set-filter="customFilter" st-table="displayed" st-safe-src="collection" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th st-sort="productName">Product Name</th>
+                <th st-sort="productDesc">Product Description</th>
+                <th st-sort="productQty">Product Quantity</th>
+                <th st-sort="productPric">Product Price</th>
+            </tr>
+            <tr>
+                <th>
+                    <input placeholder="search productName" st-search="productName" />
+                </th>
+                <th>
+                    <input placeholder="search productDesc" st-search="productDesc" />
+                </th>
+                <th>
+                    &nbsp;
+                </th>
+                <th>
+                    &nbsp;
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in displayed">
+                <td>{{row.productName}}</td>
+                <td>{{row.productDesc | uppercase}}</td>
+                <td>{{row.productQty}}</td>
+                <td>{{row.productPric}}</td>
+                <td>
+                    <button type="button" ng-click="removeItem(row)" class="btn btn-sm btn-danger">
+                        <i class="glyphicon glyphicon-remove-circle">
+                        </i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="text-center">
+                    <div st-items-by-page="10" st-pagination="">
+                        <nav ng-if="pages.length >= 2">
+                            <ul class="pagination">
+                                <li>
+                                    <a ng-click="selectPage(1)">First</a>
+                                </li>
+                                <li>
+                                    <a ng-click="selectPage(currentPage - 1)">&lt;</a>
+                                </li>
+                                <li>
+                                    <a><page-select></page-select> of {{numPages}}</a>
+                                </li>
+                                <li>
+                                    <a ng-click="selectPage(currentPage + 1)">&gt;</a>
+                                </li>
+                                <li><a ng-click="selectPage(numPages)">Last</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>

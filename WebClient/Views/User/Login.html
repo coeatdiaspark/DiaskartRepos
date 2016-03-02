@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html ng-app="appUser">
+<head>
+    <title>Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap-theme.css" rel="stylesheet" />
+    <script src="../../Scripts/angular.min.js"></script>
+    <link href="../../Content/Site.css" rel="stylesheet" />
+    <script src="../../Scripts/ui-bootstrap-tpls-1.2.1.js"></script>
+    <link href="../../Content/bootstrap.css" rel="stylesheet" />
+    <script src="../../Scripts/angular-animate.js"></script>
+    <script src="../../Controllers/User/appUser.js"></script>
+    <script src="../../Controllers/User/Login.js"></script>
+
+
+</head>
+<body ng-controller="Login">
+    <div class="modal-header">
+        <strong class="">Login</strong>
+
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required="">
+                </div>
+            </div>
+            <div class="form-group last">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="submit" class="btn btn-success btn-sm">Sign in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        Not Registered? <a href="#" class="">Register here</a>
+        <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <script src="../../Controllers/User/appUser.js"></script>
+    <script src="../../Controllers/User/UserDefault.js"></script>
+
+    <title></title>
+</head>
+
+<body ng-controller="UserDefault">
+    <br />
+    <div class="row">
+        <div ng-repeat="name in topSubCategories">
+            <div class="col-sm-3">
+                <div class="well">{{name}}</div> 
+            </div>
+            </div>
+        </div>
+    <div class="row">
+        <div ng-repeat="name in topProducts">
+            <div class="col-sm-3">
+                <div class="well">{{name}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div ng-repeat="name in recentPurchases">
+            <div class="col-sm-3">
+                <div class="well">{{name}}</div>
+            </div>
+        </div>
+    </div>
+   
+
+</body>
+</html>

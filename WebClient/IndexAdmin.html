@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html ng-app="appAdmin">
+<head>
+    <title>Diaskart</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/modernizr-2.6.2.js"></script>
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/ui-bootstrap-tpls-1.2.1.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/smart-table.js"></script>
+    <script src="Controllers/Admin/Sidebar.js"></script>
+    <script src="Controllers/Admin/AdminDefault.js"></script>
+    <script src="Controllers/Admin/Categories.js"></script>
+    <script src="Controllers/Admin/Customers.js"></script>
+    <script src="Controllers/Admin/Orders.js"></script>
+    <script src="Controllers/Admin/Products.js"></script>
+    <script src="Controllers/Admin/SubCategories.js"></script>
+    <script src="Controllers/Admin/SalesReport.js"></script>
+    <script src="Controllers/Admin/AddEditCategory.js"></script>
+    <script src="Controllers/Admin/AddEditProduct.js"></script>
+    <script src="Controllers/Admin/AddEditSubCategory.js"></script>
+
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">DIASKART</a>
+
+                <button onclick="location.href='Views/Admin/Login.html'" class="topcorner">Logout</button>
+                <style type="text/css">
+                    .topcorner {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                    }
+                </style>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid container-main">
+        <br />
+        <div class="col-sm-2">
+            <div>
+
+                <ul class="navigation">
+
+                    <!--<li ng-repeat="name in menus"><a href="#">{{name}}</a></li>-->
+                    <li> <a href="#Categories">Categories</a></li>
+                    <li> <a href="#SubCategories">Sub Categories</a></li>
+                    <li> <a href="#Products">Products</a></li>
+                    <li> <a href="#Orders">Orders</a></li>
+                    <li> <a href="#SalesReport">Sales Report</a></li>
+                    <li> <a href="#Customers">Customer</a></li>
+                    <li> <a href="#AddEditCategory">Add Categories</a></li>
+                    <li> <a href="#AddEditSubCategory">Add Sub Categories</a></li>
+                    <li> <a href="#AddEditProduct">Add Products</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div ng-view></div>
+        </div>
+    </div>
+
+
+
+        <footer class="panel-footer">
+            <p>&copy;Diaskart </p>
+        </footer>
+
+
+</body>
+
+</html>
+

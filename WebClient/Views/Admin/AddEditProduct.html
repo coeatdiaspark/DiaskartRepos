@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html ng-app="appAdmin">
+<head>
+    <title>AddProduct</title>
+    <script src="../../Scripts/angular.js"></script>
+    <script src="../../Scripts/angular-animate.js"></script>
+    <script src="../../Scripts/ui-bootstrap-tpls-1.2.1.js"></script>
+    <script src="../../Controllers/Admin/AddEditProduct.js"></script>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/Site.css" rel="stylesheet" />
+</head>
+<body ng-controller="ModalDemoCtrl">
+    <div class="container body-content form-horizontal">
+        <h2>Add Product</h2>
+
+        <div class="form-group">
+            <div class="col-sm-2">
+                Name
+            </div>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="AddProduct.Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">
+                Category
+            </div>
+            <div class="col-sm-10">
+                <select name="singleSelect" ng-model="AddProduct.singleSelect" class="form-control">
+                    <option value="option-1">Men's</option>
+                    <option value="option-2">Women's</option>
+                    <option value="option-3">Kid's</option>
+                    <option value="option-4">Electronics</option>
+                    <option value="option-5">Sports and Outdoors</option>
+                    <option value="option-6">Books</option>
+                    <option value="option-7">Music</option>
+                    <option value="option-8">Movies & TV</option>
+                    <option value="option-9">Gaming</option>
+                    <option value="option-10">Stationary</option>
+                    <option value="option-11">Kitchen Appliances</option>
+                    <option value="option-12">Furniture</option>
+                    <option value="option-13">Health Care</option>
+                </select>
+            </div>
+        </div>
+        <!--<input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="Contact.LastName">-->
+        <!--<button ng-model ="Product.Category"> <span class="glyphicon glyphicon-plus"></span> Add Category </button>-->
+        <div class="form-group">
+            <div class="col-sm-2">
+                Subcategories
+            </div>
+            <div class="col-sm-10">
+                <button class="btn" ng-click="openSubCat('lg')"> <span class="glyphicon glyphicon-plus"></span>Add Subcategory</button>
+                <div ng-show="selsubcat">Selected: {{ selsubcat }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">
+                Features
+            </div>
+            <div class="col-sm-10">
+                <div class="form-group" ng-repeat="feature in features">
+                    <div class="col-lg-2">
+                        {{feature}}
+                    </div>
+                    <div class="col-lg-5">
+                        <input type="text" />
+                    </div>
+                </div>
+                <button class="btn" ng-click="openFeatures('lg')"> <span class="glyphicon glyphicon-plus"></span>Add Features</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">
+                Price
+            </div>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" ng-model="AddProduct.Price">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">
+                Full Description
+            </div>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="AddProduct.Description">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">
+                Image
+            </div>
+            <div class="col-sm-10">
+                <input type="image" ng-model="AddProduct.Image">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-2">
+                <input type="button" value="Save" class="btn btn-success" ng-click="save()">
+            </div>
+            <div class="col-sm-10">
+                <input type="button" value="Cancel" class="btn btn-success" ng-click="cancel()">
+            </div>
+        </div>
+
+        <script type="text/ng-template" id="subcatModalContent.html">
+            <div class="modal-header">
+                <h3 class="modal-title">Subcategories</h3>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li ng-repeat="subcat in subcategories">
+                        <input type="radio" ng-click="$event.preventDefault(); selected.subcat = subcat">
+                        <!--                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">-->
+                        {{ subcat }}
+                        <!-- </a>-->
+                    </li>
+                </ul>
+                Selected: <b>{{ selected.subcat }}</b>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+    </div>
+</body>
+</html>

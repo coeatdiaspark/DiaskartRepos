@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html ng-app="mynodemodule" class="ng-scope">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        @charset "UTF-8";
+
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
+
+        ng\:form {
+            display: block;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Master </title>
+    <link href="../../Content/Site.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap-theme.css" rel="stylesheet" />
+    <script src="../../Scripts/modernizr-2.6.2.js"></script>
+    <script src="../../Scripts/angular.min.js"></script>
+    <script src="../../Controllers/Admin/SubCategory.js"></script>
+    
+</head>
+<body ng-app="mynodemodule" ng-controller="mycontroller" class="ng-scope">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="dw-loading dw-loading-overlay">
+                    <div class="navbar navbar-inverse navbar-fixed-top">
+                        <div class="container">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="http://localhost:62766/Home">Diaskart</a>
+                            </div>
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container body-content">
+
+
+                        <h2>Sub Category </h2>
+                        <div class="panel panel-primary">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Category
+                                        </td>
+                                        <td>
+                                            <select ng-model=" categories.CategoryId" ng-options=" CategoryList.Id as CategoryList.CategoryName for CategoryList in Categories.CategoryList"
+                                                    class="form-control ng-valid ng-dirty ng-valid-parse ng-touched"></select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Name
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="SubCategory.Name">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Discription
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="SubCategory.Discription">
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Attribute Name
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="SubCategory.AttributeName">
+                                            <br />
+                                            <input type="button" value="Add Attributes" class="btn btn-info" ng-click="Added()">
+                                        </td>
+                                    </tr>                                
+                                </tbody>
+                            </table>
+                        </div>
+                        <table class="table table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <td> Attribute List </td>
+                                </tr>
+                            </thead>
+                            <tbody ng-repeat="SubCategory in SubCategories">
+                                <tr>
+                                    <td>{{SubCategory.SubCategoryId}}</td>
+                                    <td>{{SubCategory.CategoryName}}</td>
+                                    <td>{{SubCategory.SubCategoryName}}</td>
+                                    <td>{{SubCategory.Attributes}}</td>
+                                    <td> <input type="button" value="Delete" class="btn btn-default btn-sm btn-danger ng-scope ng-isolate-scope" ng-click="delete(cnt)" /> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+                        <footer></footer>
+                    </div>
+                </div>
+               </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+    
